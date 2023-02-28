@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./style.css" />
+
+    <title>Frontend Mentor | Multi-step form</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <main class="container">
+      <!-- Sidebar start -->
+      <nav class="stepContainer">
+        <!-- Step 1 -->
+        <div class="step">
+          <p class="step__number step__number--active mediumFont">1</p>
+          <div class="step__info">
+            <p>Step 1</p>
+            <h3>Your Info</h3>
+          </div>
+        </div>
+        <!-- Step 2 -->
+        <div class="step">
+          <p class="step__number mediumFont">2</p>
+          <div class="step__info">
+            <p>Step 2</p>
+            <h3>Select plan</h3>
+          </div>
+        </div>
+        <!-- Step 3 -->
+        <div class="step">
+          <p class="step__number mediumFont">3</p>
+          <div class="step__info">
+            <p>Step 3</p>
+            <h3>Add-ons</h3>
+          </div>
+        </div>
+        <!-- Step 4 -->
+        <div class="step">
+          <p class="step__number mediumFont">4</p>
+          <div class="step__info">
+            <p>Step 4</p>
+            <h3>Summary</h3>
+          </div>
+        </div>
+        <!-- Step 1 Your info Step 2 Select plan Step 3 Add-ons Step 4 Summary -->
+      </nav>
+      <!-- Sidebar end -->
+
+      <!-- Steps -->
+      <form class="formContainer">
+        <!-- Step 1 start -->
+
+        <section class="formSection" id="formSection1">
+          <main>
+            <h2 class="formSection__title">Personal info</h2>
+            <p class="formSection__info">
+              Please provide your name, email address, and phone number.
+            </p>
+            <!-- Name -->
+            <div class="formSection__input">
+              <div>
+                <label for="name">Name</label>
+                <p class="errorText" id="nameError"></p>
+              </div>
+              <input type="text" id="name" placeholder="e.g. Stephen King" />
+            </div>
+
+            <!-- Email Address -->
+            <div class="formSection__input">
+              <div>
+                <label for="email">Email Address</label>
+                <p class="errorText" id="emailError"></p>
+              </div>
+              <input
+                type="email"
+                id="email"
+                placeholder="e.g. stephenking@lorem.com"
+              />
+            </div>
+
+            <!-- Phone -->
+            <div class="formSection__input">
+              <div>
+                <label for="phone">Phone Number</label>
+                <p class="errorText" id="phoneError">This field is required</p>
+              </div>
+              <input type="tel" id="phone" placeholder="e.g. +1 234 567 890" />
+            </div>
+          </main>
+
+          <footer class="formSection__footer">
+            <div class="formSection__footer__btns">
+              <div></div>
+              <button type="button" class="next">Next Step</button>
+            </div>
+          </footer>
+        </section>
+        <!-- Step 1 end -->
+
+        <!-- Step 2 start -->
+        <section class="formSection" id="formSection2">
+          <main>
+            <h2 class="formSection__title">Select your plan</h2>
+            <p class="formSection__info">
+              You have the option of monthly or yearly billing.
+            </p>
+
+            <!-- Plans -->
+            <section class="plansContainer">
+              <!-- Arcade -->
+              <article class="plan plan__active">
+                <!-- image -->
+                <div class="plan__image">
+                  <img src="./assets/images/icon-arcade.svg" />
+                </div>
+                <!-- info -->
+                <div class="plan__info">
+                  <h5>Arcade</h5>
+                  <p>$<span>9</span>/<span>mo</span></p>
+                  <p class="plan__info--year">2 months free</p>
+                </div>
+              </article>
+
+              <!-- Advanced -->
+              <article class="plan">
+                <!-- image -->
+                <div class="plan__image">
+                  <img src="./assets/images/icon-advanced.svg" />
+                </div>
+                <!-- info -->
+                <div class="plan__info">
+                  <h5>Advanced</h5>
+                  <p>$<span>12</span>/<span>mo</span></p>
+                  <p class="plan__info--year">2 months free</p>
+                </div>
+              </article>
+
+              <!-- Pro -->
+              <article class="plan">
+                <!-- image -->
+                <div class="plan__image">
+                  <img src="./assets/images/icon-pro.svg" />
+                </div>
+                <!-- info -->
+                <div class="plan__info">
+                  <h5>Pro</h5>
+                  <p>$<span>15</span>/<span>mo</span></p>
+                  <p class="plan__info--year">2 months free</p>
+                </div>
+              </article>
+            </section>
+
+            <!-- Duration -->
+            <section class="durationContainer">
+              <div class="duration">
+                <p class="duration__text duration__text--active">Monthly</p>
+                <div class="switchToggle">
+                  <input type="checkbox" id="duration" />
+                  <label for="duration">Toggle</label>
+                </div>
+                <p class="duration__text">Yearly</p>
+              </div>
+            </section>
+          </main>
+
+          <footer class="formSection__footer">
+            <div class="formSection__footer__btns">
+              <p class="formSection__footer__btns--back">Go Back</p>
+              <button type="button" class="next">Next Step</button>
+            </div>
+          </footer>
+        </section>
+        <!-- Step 2 end -->
+
+        <!-- Step 3 start -->
+        <!-- <section>
+          Pick add-ons Add-ons help enhance your gaming experience. Online
+          service Access to multiplayer games +$1/mo Larger storage Extra 1TB of
+          cloud save +$2/mo Customizable Profile Custom theme on your profile
+          +$2/mo Go Back Next Step
+        </section> -->
+        <section class="formSection" id="formSection3">
+          <main>
+            <h2 class="formSection__title">Pick add-ons</h2>
+            <p class="formSection__info">
+              Add-ons help enhance your gaming experience.
+            </p>
+
+            <!-- Addons -->
+            <section class="addonsContainer">
+              <!-- Online -->
+              <article class="addon addon__selected">
+                <!-- checkbox -->
+                <div class="addon__check">
+                  <input type="checkbox" name="online" id="online" />
+                </div>
+                <!-- info -->
+                <div class="addon__info">
+                  <h5 class="addon__info--title">Online Service</h5>
+                  <p class="addon__info--subtitle">
+                    Access to multiplayer games
+                  </p>
+                </div>
+                <!-- price -->
+                <div>
+                  <p class="addon__price">+$<span>1</span>/<span>mo</span></p>
+                </div>
+              </article>
+
+              <!-- Larger -->
+              <article class="addon addon__selected">
+                <!-- checkbox -->
+                <div class="addon__check">
+                  <input type="checkbox" name="larger" id="larger" />
+                </div>
+                <!-- info -->
+                <div class="addon__info">
+                  <h5 class="addon__info--title">Larger storage</h5>
+                  <p class="addon__info--subtitle">Extra 1TB of cloud save</p>
+                </div>
+                <!-- price -->
+                <div class="addon__price">
+                  <p>+$<span>2</span>/<span>mo</span></p>
+                </div>
+              </article>
+
+              <!-- Customizable -->
+              <article class="addon">
+                <!-- checkbox -->
+                <div class="addon__check">
+                  <input type="checkbox" name="customize" id="customize" />
+                </div>
+                <!-- info -->
+                <div class="addon__info">
+                  <h5 class="addon__info--title">Customizable profile</h5>
+                  <p class="addon__info--subtitle">
+                    Custom theme on your profile
+                  </p>
+                </div>
+                <!-- price -->
+                <div class="addon__price">
+                  <p>+$<span>2</span>/<span>mo</span></p>
+                </div>
+              </article>
+            </section>
+          </main>
+
+          <footer class="formSection__footer">
+            <div class="formSection__footer__btns">
+              <p class="formSection__footer__btns--back">Go Back</p>
+              <button type="button" class="next">Next Step</button>
+            </div>
+          </footer>
+        </section>
+
+        <!-- Step 3 end -->
+
+        <!-- Step 4 start -->
+        <!-- <section>
+          Finishing up Double-check everything looks OK before confirming.
+
+          // Dynamically add subscription and add-on selections here 
+
+          Total (per month/year) Go Back Confirm
+        </section> -->
+        <!-- Step 4 end -->
+
+        <!-- Step 5 start -->
+        <!-- Step 5 end -->
+      </form>
+    </main>
+
+    <!-- <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div> -->
+
+    <!-- Script -->
+    <script src="./script.js"></script>
+  </body>
+</html>
